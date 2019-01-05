@@ -1,0 +1,31 @@
+# Please Check Version:
+#   Docker version 17.03.2-ce, build f5ec1e2
+#   docker-compose version 1.23.1, build b02f1306
+# TO FIX: 
+#   new canvas(150,150) => new canvas.createCanvas(150, 150)
+
+version: '0.1'
+services: 
+  web:
+    build: .
+    container_name: clustercc
+    ports: 
+      - '3000:3000'
+    tty: true
+    volumes: 
+      - ~/clustercc:/usr/src/clustercc
+    links:
+      - mongodb
+      - redis
+  mongodb:
+    image: mongo:3.4.18
+    container_name: mongodb
+    ports:
+      - '27017'
+    # volumes: 
+    #   - ~/clustercc/data/mongodb/:/data/db
+  redis:
+    image: redis:3.2.11
+    container_name: redis
+    ports:
+      - '6379'
