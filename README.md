@@ -53,3 +53,20 @@ $ sudo add-apt-repository \
 $ sudo apt-get update
 $ sudo apt-get install docker-ce
 ```
+
+### RHEL or CentOS
+#### docker-ce
+
+```
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum makecache fast
+
+sudo yum -y install docker-ce
+// or 
+sudo yum -y install docker-ce-<version>-<release>
+
+sudo systemctl start docker
+sudo docker run hello-world
+```
+
