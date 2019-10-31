@@ -42,6 +42,13 @@ $ sudo apt-get install python-pip
 $ sudo pip install docker-compose
 ```
 
+遇到错误 "ERROR: Cannot uninstall 'chardet'.", 尝试
+```
+$ pip install --upgrade --force-reinstall pip==9.0.3
+$ pip install docker-compose --disable-pip-version-check
+$ pip install --upgrade pip
+```
+
 #### Upgrade
 
 ```
